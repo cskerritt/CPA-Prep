@@ -128,7 +128,7 @@ flowchart TB
 
 **Deficiency severity:** **Deficiency** → **Significant deficiency** (important enough for those charged
 with governance) → **Material weakness** (reasonable possibility of material misstatement not prevented/
-detected). This bridges directly to **ISC** — see [`discipline-ISC-deep-dive.md`](discipline-ISC-deep-dive.md) if built.
+detected). This bridges directly to **ISC** — see [`ISC-deep-dive.md`](ISC-deep-dive.md) §4 (framework comparison) and §1 (SOC).
 
 ---
 

@@ -117,6 +117,11 @@ flowchart LR
 
 ## 8. Deeper-research TODO
 
+> ✅ **Built:** [`deep-dives/TCP-deep-dive.md`](deep-dives/TCP-deep-dive.md) — owner basis & AAA, entity
+> selection, property-disposition planning, AMT flow, equity comp (ISO/NQSO/RSU), trusts/DNI/estate/gift,
+> plus the **OBBBA July 1, 2026 testability cutoff**.
+
+
 - [ ] Build advanced **basis & distribution** templates (partner outside basis, S-corp AAA/stock basis).
 - [ ] Build a **property-disposition** map: §1031 · §1231/1245/1250 · installment · §1202 · related-party.
 - [ ] Build an **entity-selection decision** framework (C/S/partnership trade-offs by goal).

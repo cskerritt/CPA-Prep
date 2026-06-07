@@ -164,19 +164,38 @@ gain recognized − boot received + boot paid.
 
 ---
 
-## 6. OBBBA 2025 change log (verify testability for your window)
+## 6. OBBBA 2025 change log + the **July 1, 2026 testability cutoff**
 
-The **One Big Beautiful Bill Act** (enacted **July 4, 2025**) changed items REG/TCP candidates must watch:
+### ⏱️ The cutoff that decides which law you study (VERIFIED)
+The AICPA phases new tax law in on a delay. **OBBBA provisions with 2024/2025 effective dates become
+testable on REG and TCP starting the Q3 window — July 1, 2026.**
 
-| Item | Change | Status note |
+```mermaid
+flowchart LR
+    A["Sit REG/TCP<br/>BEFORE Jul 1, 2026"] --> PRE["Study PRE-OBBBA law<br/>(old §1202, TCJA bonus phasedown,<br/>old §179 limits)"]
+    B["Sit REG/TCP<br/>ON/AFTER Jul 1, 2026"] --> POST["OBBBA changes ARE testable<br/>(see table below)"]
+```
+
+| If your REG/TCP sit is… | Which tax law applies |
+|---|---|
+| **Before July 1, 2026** (Q1–Q2 2026) | **Pre-OBBBA** — e.g., §1202 100%-only at 5 yrs / $50M asset cap; TCJA bonus phasedown (40% in 2025); pre-OBBBA §179 |
+| **On/after July 1, 2026** (Q3 2026+) | **OBBBA** changes below are testable |
+| Provisions effective **2026 or later** | Standard policy: testable the **first quarter beginning 6 months after** the effective date |
+
+> Only **REG and TCP** are affected. FAR, AUD, BAR, ISC are **not** touched by OBBBA.
+> **Today is 2026-06-07** → a sit right now is **pre-OBBBA**. Confirm your exact window before memorizing figures.
+
+### OBBBA changes (testable Jul 1, 2026+)
+
+| Item | Change | Note |
 |---|---|---|
-| **Bonus depreciation** | **100% permanently restored** for qualified property placed in service after **Jan 19, 2025** (reverses TCJA phasedown) | Likely testable in 2026 windows — confirm |
-| **§179 expensing** | Limit raised to **$2.5M**, phase-out threshold **$4M** (2025), inflation-indexed | Dollar figures drift — verify |
-| **§1202 QSBS** | New **tiered** exclusion: **50% @ 3 yr, 75% @ 4 yr, 100% @ 5 yr**; per-issuer cap → **$15M**; gross-asset limit → **$75M**; applies to stock acquired **after July 4, 2025** ($50M/5-yr-only rules remain for older stock) | Major change — verify exam treatment |
-| **§461(l) excess business loss** | Made **permanent** | Verify threshold |
+| **Bonus depreciation** | **100% permanently restored** for qualified property placed in service after **Jan 19, 2025** (reverses TCJA phasedown) | Pre-Jul-2026 exams still test the **TCJA phasedown** |
+| **§179 expensing** | Limit raised to **$2.5M**, phase-out threshold **$4M** (2025), inflation-indexed | Dollar figures drift — verify for the testable year |
+| **§1202 QSBS** | New **tiered** exclusion: **50% @ 3 yr, 75% @ 4 yr, 100% @ 5 yr**; per-issuer cap → **$15M**; gross-asset limit → **$75M**; applies to stock acquired **after July 4, 2025** ($50M / 5-yr-only / 100% rules remain for older stock) | Major change |
+| **§461(l) excess business loss** | Made **permanent** | Verify indexed threshold |
 
-> **Bottom line:** learn the **mechanics** (how bonus/§179/§1202 work); treat the **dollar thresholds** as
-> verify-before-the-exam. The AICPA publishes the applicable-law cutoff for each window.
+> **Bottom line:** learn the **mechanics** of bonus/§179/§1202 either way; the **version and dollar
+> thresholds** depend on whether your sit is before or after the July 1, 2026 cutoff.
 
 ---
 

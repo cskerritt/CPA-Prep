@@ -120,6 +120,11 @@ flowchart LR
 
 ## 8. Deeper-research TODO
 
+> ✅ **Built:** [`deep-dives/BAR-deep-dive.md`](deep-dives/BAR-deep-dive.md) — ratio dictionary + DuPont,
+> cost/variance formulas, breakeven & capital budgeting, advanced consolidations, derivatives & hedge
+> accounting, government-wide ↔ fund reconciliation.
+
+
 - [ ] Pull exact Area I–III topic lists from the 2026 blueprint; map overlap vs. FAR to avoid re-studying.
 - [ ] Build a **ratio dictionary** (formula + what it diagnoses + benchmark direction).
 - [ ] Build a **hedge accounting** decision sheet (fair-value vs. cash-flow vs. net-investment).

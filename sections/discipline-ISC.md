@@ -116,6 +116,11 @@ flowchart LR
 
 ## 8. Deeper-research TODO
 
+> ✅ **Built:** [`deep-dives/ISC-deep-dive.md`](deep-dives/ISC-deep-dive.md) — SOC report matrix, Trust
+> Services Criteria, framework comparison (NIST CSF 2.0 / COBIT / CIS / ISO 27001), data life cycle,
+> IAM / access control, privacy-regime comparison.
+
+
 - [ ] Build the **SOC matrix**: SOC 1/2/3/Cyber × Type 1/2 × user × Trust Services Criteria.
 - [ ] Build a **framework comparison**: NIST CSF 2.0 vs. COBIT vs. CIS (purpose, structure, when used).
 - [ ] Build a **data life-cycle** diagram with the control at each stage.

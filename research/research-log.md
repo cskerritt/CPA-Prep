@@ -33,14 +33,16 @@ flowchart LR
 | FAR | ✅ [`../sections/core-FAR.md`](../sections/core-FAR.md) | ✅ | ✅ | ✅ [`../sections/deep-dives/FAR-deep-dive.md`](../sections/deep-dives/FAR-deep-dive.md) |
 | AUD | ✅ [`../sections/core-AUD.md`](../sections/core-AUD.md) | ✅ | ✅ | ✅ [`../sections/deep-dives/AUD-deep-dive.md`](../sections/deep-dives/AUD-deep-dive.md) |
 | REG | ✅ [`../sections/core-REG.md`](../sections/core-REG.md) | ✅ | ✅ | ✅ [`../sections/deep-dives/REG-deep-dive.md`](../sections/deep-dives/REG-deep-dive.md) |
-| BAR | ✅ [`../sections/discipline-BAR.md`](../sections/discipline-BAR.md) | ✅ | ✅ | ⬜ |
-| ISC | ✅ [`../sections/discipline-ISC.md`](../sections/discipline-ISC.md) | ✅ | ✅ | ⬜ |
-| TCP | ✅ [`../sections/discipline-TCP.md`](../sections/discipline-TCP.md) | ✅ | ✅ | ⬜ |
+| BAR | ✅ [`../sections/discipline-BAR.md`](../sections/discipline-BAR.md) | ✅ | ✅ | ✅ [`../sections/deep-dives/BAR-deep-dive.md`](../sections/deep-dives/BAR-deep-dive.md) |
+| ISC | ✅ [`../sections/discipline-ISC.md`](../sections/discipline-ISC.md) | ✅ | ✅ | ✅ [`../sections/deep-dives/ISC-deep-dive.md`](../sections/deep-dives/ISC-deep-dive.md) |
+| TCP | ✅ [`../sections/discipline-TCP.md`](../sections/discipline-TCP.md) | ✅ | ✅ | ✅ [`../sections/deep-dives/TCP-deep-dive.md`](../sections/deep-dives/TCP-deep-dive.md) |
 
 > **Phase 1 (done):** roadmap/web, exam architecture, foundations, six research-backed section dossiers,
 > study plan, resources, logistics.
-> **Phase 2 (in progress):** Core deep-dive artifacts built (FAR, AUD, REG). **Next:** the three Discipline
-> deep-dives (build the one matching your chosen Discipline first).
+> **Phase 2 (done):** deep-dive artifacts for **all six** sections (3 Cores + 3 Disciplines), plus the
+> **OBBBA July 1, 2026 testability cutoff** verified for REG/TCP.
+> **Phase 3 (next):** verification queue (verbatim blueprint topic lists, indexed tax figures), plus
+> optional per-topic worked-problem sets and flashcard decks.
 
 ---
 
@@ -70,26 +72,26 @@ Ordered roughly by exam impact. Each links back to the dossier that owns it.
 - [x] **Business-law rule grid** (contracts, agency, secured txns, bankruptcy)
 - [x] **Property dispositions & character** (§1231/1245/1250 · §1031 · installment) + **OBBBA 2025 change log**
 
-### BAR
-- [ ] **Ratio dictionary** (formula + diagnosis + benchmark direction)
-- [ ] **Hedge accounting** decision sheet (fair-value / cash-flow / net-investment)
-- [ ] **Advanced consolidation** template (intercompany, NCI, step acquisition)
-- [ ] **Gov-wide ↔ fund reconciliation** worked example
-- [ ] **Cost/variance** formula sheet
+### BAR — ✅ deep-dive built: [`../sections/deep-dives/BAR-deep-dive.md`](../sections/deep-dives/BAR-deep-dive.md)
+- [x] **Ratio dictionary** (formula + diagnosis + benchmark direction) + DuPont
+- [x] **Hedge accounting** decision sheet (fair-value / cash-flow / net-investment)
+- [x] **Advanced consolidation** template (intercompany, NCI, step acquisition)
+- [x] **Gov-wide ↔ fund reconciliation** worked example
+- [x] **Cost/variance** formula sheet + breakeven/capital budgeting
 
-### ISC
-- [ ] **SOC matrix** (1/2/3/Cyber × Type 1/2 × user × Trust Services Criteria)
-- [ ] **Framework comparison** (NIST CSF 2.0 vs. COBIT vs. CIS)
-- [ ] **Data life-cycle** diagram with controls per stage
-- [ ] **IAM / access-control** quick sheet
-- [ ] **Privacy-regime** comparison (HIPAA / GDPR / PCI-DSS)
+### ISC — ✅ deep-dive built: [`../sections/deep-dives/ISC-deep-dive.md`](../sections/deep-dives/ISC-deep-dive.md)
+- [x] **SOC matrix** (1/2/3/Cyber × Type 1/2 × user × Trust Services Criteria)
+- [x] **Framework comparison** (NIST CSF 2.0 vs. COBIT vs. CIS vs. ISO 27001)
+- [x] **Data life-cycle** diagram with controls per stage
+- [x] **IAM / access-control** quick sheet
+- [x] **Privacy-regime** comparison (HIPAA / GDPR / PCI-DSS / CCPA / GLBA)
 
-### TCP
-- [ ] **Basis & distribution** templates (partner outside basis, S-corp AAA/stock basis)
-- [ ] **Property-disposition** map (§1031 · §1231/1245/1250 · installment · §1202 · related-party)
-- [ ] **Entity-selection** decision framework
-- [ ] **AMT** flow + **equity-comp** timing sheet (ISO/NQSO/RSU)
-- [ ] **Trust DNI** & gift-tax quick reference
+### TCP — ✅ deep-dive built: [`../sections/deep-dives/TCP-deep-dive.md`](../sections/deep-dives/TCP-deep-dive.md)
+- [x] **Basis & distribution** templates (partner outside basis, S-corp AAA/stock basis)
+- [x] **Property-disposition** planning map (§1031 · installment · §1202 · §1033 · related-party)
+- [x] **Entity-selection** decision framework
+- [x] **AMT** flow + **equity-comp** timing sheet (ISO/NQSO/RSU)
+- [x] **Trust DNI** & estate/gift quick reference
 
 ---
 
@@ -101,6 +103,11 @@ Ordered roughly by exam impact. Each links back to the dossier that owns it.
 - [ ] **Credit window** (18 vs. 30 months) for **my specific jurisdiction**.
 - [ ] **Discipline testing windows** and **score-release dates** for my target sit months.
 - [ ] **Review-course** features/pricing before any purchase.
+- [x] **OBBBA testability** — VERIFIED: testable on REG/TCP starting **July 1, 2026**; sit before then = pre-OBBBA
+  law. (Sources: Gleim, eduyush, Atlas CPA Index, board360 — Jun 2026.) Indexed dollar figures still need
+  per-year confirmation.
+- [ ] **Indexed tax figures** for the testable year (gift exclusion, unified exemption, AMT exemption/phaseout,
+  §179 limit, estimated-tax thresholds).
 
 ---
 
@@ -115,6 +122,20 @@ Append dated entries as you go. Template:
 - Artifact: <what you built + where it lives>
 - Verify later: <anything uncertain>
 ```
+
+### 2026-06-07 — Phase 2b: Discipline deep-dives + OBBBA cutoff verified
+- Sources: AICPA pronouncement-testability policy (later of: Q after earliest mandatory effective date, or
+  Q beginning 6 months after issuance); OBBBA→CPA-exam coverage (Gleim, eduyush, Atlas CPA Index, board360);
+  TCP topic research (DNI/fiduciary, estate & gift, AMT, ISO/NQSO/RSU).
+- Found: **OBBBA (2024/2025 provisions) testable on REG & TCP starting July 1, 2026**; before that =
+  pre-OBBBA law; FAR/AUD/BAR/ISC unaffected. Confirmed TCP tests trust DNI, estate/gift (unified credit,
+  gift-splitting, GST, A-B/GRAT/CRT/FLP), AMT (ISO preference), equity comp.
+- Artifacts: `sections/deep-dives/BAR-deep-dive.md` (ratios/DuPont, variances, breakeven/capital budgeting,
+  advanced consolidations, hedge accounting, gov reconciliation); `ISC-deep-dive.md` (SOC matrix, TSC,
+  framework comparison + NIST CSF 2.0 functions, data life cycle, IAM, privacy regimes);
+  `TCP-deep-dive.md` (owner basis/AAA, entity selection, disposition planning, AMT, equity comp, trusts/
+  estate/gift) + OBBBA cutoff cross-reference. Updated REG-deep-dive §6 with the July 1, 2026 cutoff table.
+- Verify later: indexed dollar figures per testable year; verbatim blueprint topic lists.
 
 ### 2026-06-07 — Phase 2: Core deep-dives
 - Sources: FASB ASC / IRC / COSO / AICPA-PCAOB knowledge; AICPA 2026 blueprint structure; **OBBBA 2025**

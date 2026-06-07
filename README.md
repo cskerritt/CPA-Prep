@@ -42,10 +42,13 @@ sections/                         ← deep research dossier per competency area
   discipline-BAR.md
   discipline-ISC.md
   discipline-TCP.md
-  deep-dives/                     ← exam-ready reference sheets (Phase 2)
+  deep-dives/                     ← exam-ready reference sheets (Phase 2 — all 6 sections)
     FAR-deep-dive.md              ← ASC 606, ASC 842, cash flows, M-1 bridge, gov/NFP
     AUD-deep-dive.md              ← independence matrix, report tree, service grid, COSO, sampling
     REG-deep-dive.md              ← basis, 3-entity comparison, dispositions, business law, OBBBA 2025
+    BAR-deep-dive.md              ← ratios/DuPont, variances, consolidations, hedging, gov reconciliation
+    ISC-deep-dive.md              ← SOC matrix, Trust Services Criteria, frameworks, data lifecycle, IAM
+    TCP-deep-dive.md              ← owner basis/AAA, entity selection, AMT, equity comp, trusts/estate/gift
 study-plan/
   01-sequence-and-hours.md        ← what order to sit, how many hours per section
   02-phased-plans.md              ← 12 / 16 / 24-week plans with weekly milestones
