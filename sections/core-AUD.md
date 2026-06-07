@@ -156,6 +156,10 @@ flowchart LR
 
 ## 9. Deeper-research TODO
 
+> ✅ **Built:** [`deep-dives/AUD-deep-dive.md`](deep-dives/AUD-deep-dive.md) — independence/authority matrix,
+> report decision tree, audit/review/compilation/prep/attest service grid, COSO 5/17, sampling quick reference.
+
+
 - [ ] Build the **independence matrix**: rows = engagement types, cols = AICPA/SEC/PCAOB/GAO/DOL → governing rule.
 - [ ] Build a **report-decision tree** (opinion type → modification → required paragraphs/wording).
 - [ ] Make a **SSARS vs. audit vs. attestation** service grid (assurance level, procedures, report).

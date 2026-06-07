@@ -150,6 +150,10 @@ flowchart LR
 
 ## 8. Deeper-research TODO (push from "covered" → "mastered")
 
+> ✅ **Built:** [`deep-dives/FAR-deep-dive.md`](deep-dives/FAR-deep-dive.md) — ASC 606 five-step, ASC 842
+> leases, cash-flow (indirect) quick sheet, book-to-tax (M-1) bridge, governmental vs. NFP cheat sheet.
+
+
 - [ ] Pull the **exact Area I–III topic lists** verbatim from the official 2026 blueprint PDF and check off coverage.
 - [ ] Build a one-page **ASC 606 five-step** decision flow with 5 worked variable-consideration examples.
 - [ ] Build a **lease (842) lessee** decision tree + ROU/liability rollforward template.

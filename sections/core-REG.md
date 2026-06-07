@@ -132,6 +132,11 @@ flowchart LR
 
 ## 8. Deeper-research TODO
 
+> ✅ **Built:** [`deep-dives/REG-deep-dive.md`](deep-dives/REG-deep-dive.md) — basis master sheet,
+> three-entity comparison, loss-limitation ordering, property dispositions & character, business-law rule
+> grid, and an **OBBBA 2025 tax-law change log** (bonus depreciation, §179, §1202 QSBS).
+
+
 - [ ] Build the **basis master sheet**: asset basis · partner outside basis · S-corp stock basis ordering · C-corp E&P.
 - [ ] Build a **3-entity comparison** chart (C / S / partnership): formation, basis, income character, distributions, losses.
 - [ ] Make a **loss-limitation ordering** flow (basis → at-risk → passive) with worked examples.
