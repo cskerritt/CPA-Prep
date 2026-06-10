@@ -3,11 +3,16 @@ name: Deploy to GitHub Pages
 # Deploys the whole repo as a static site so the study app is reachable at
 #   https://<user>.github.io/CPA-Prep/        (redirects to /app/)
 #   https://<user>.github.io/CPA-Prep/app/
-# Runs on pushes to the default branch (after this branch is merged) or manually.
+# Runs on pushes to the default branch or manually.
+# Note: this repo's default branch is currently claude/cpa-exam-roadmap-ghkEY
+# (the repo was created empty). If a main branch is created later and made
+# default, the main trigger below covers it.
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - claude/cpa-exam-roadmap-ghkEY
   workflow_dispatch:
 
 permissions:

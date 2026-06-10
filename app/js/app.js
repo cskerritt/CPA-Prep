@@ -30,11 +30,11 @@
     return '<span class="sectag" style="background:' + meta.color + '">' + esc(sec) + "</span>";
   }
 
-  /* Knowledge-base link helper: on GitHub Pages, point at the rendered files on github.com;
-     locally (file:// or a static server), keep the relative path. */
+  /* Knowledge-base link helper: on GitHub Pages, point at the rendered files on github.com
+     (HEAD = whatever the default branch is); locally, keep the relative path. */
   function kb(relPath) {
     if (/\.github\.io$/.test(location.hostname)) {
-      return "https://github.com/cskerritt/CPA-Prep/blob/main/" + relPath.replace(/^\.\.\//, "");
+      return "https://github.com/cskerritt/CPA-Prep/blob/HEAD/" + relPath.replace(/^\.\.\//, "");
     }
     return relPath;
   }

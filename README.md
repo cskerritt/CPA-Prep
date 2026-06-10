@@ -53,10 +53,10 @@ python3 -m http.server 8080      # then open http://localhost:8080/app/
 routing, the planner's 36 plan combinations, SRS scheduling, quiz scoring, TBS grading, the error log,
 readiness math, and export/import. CI runs it on every push (`.github/workflows/test.yml`).
 
-**Use it from your phone:** once this branch is merged to `main`, the Pages workflow
-(`.github/workflows/pages.yml`) deploys the repo as a static site — the app lands at
+**Use it from your phone:** the Pages workflow (`.github/workflows/pages.yml`) deploys the repo as a
+static site on every push to the default branch — the app lands at
 `https://cskerritt.github.io/CPA-Prep/` (the root redirects to `/app/`). If the first deploy doesn't
-auto-enable Pages, set *Settings → Pages → Source: GitHub Actions* once.
+auto-enable Pages, set *Settings → Pages → Source: GitHub Actions* once, then re-run the workflow.
 
 > The app's practice questions and cards are **supplements** built from this repo's research — they don't
 > replace a commercial review course's volume (thousands of MCQs) or TBS simulations.
