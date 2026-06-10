@@ -41,8 +41,10 @@ flowchart LR
 > study plan, resources, logistics.
 > **Phase 2 (done):** deep-dive artifacts for **all six** sections (3 Cores + 3 Disciplines), plus the
 > **OBBBA July 1, 2026 testability cutoff** verified for REG/TCP.
-> **Phase 3 (next):** verification queue (verbatim blueprint topic lists, indexed tax figures), plus
-> optional per-topic worked-problem sets and flashcard decks.
+> **Phase 3 (done):** the **study app** (`/app`) — planner, 168-card spaced-repetition deck, 114-question
+> practice bank, error log, readiness gates, data export — with a 37-assertion automated test suite.
+> **Phase 4 (next):** verification queue below (verbatim blueprint topic lists, indexed tax figures),
+> growing the question/card banks, and TBS-style practice scenarios.
 
 ---
 
@@ -122,6 +124,20 @@ Append dated entries as you go. Template:
 - Artifact: <what you built + where it lives>
 - Verify later: <anything uncertain>
 ```
+
+### 2026-06-10 — Phase 3: the study app
+- Built `/app`: dependency-free vanilla-JS study application (works over file:// or any static server).
+  Views: Dashboard, Study Plan (12/16/24-week generator with sequence/Discipline choice + Jan/Apr/Jul/Oct
+  Discipline-window check), Flashcards (168 cards, SM-2-lite spaced repetition), Practice (114 original
+  blueprint-tagged MCQs with explanations + per-area stats vs. readiness targets), Error Log (pattern
+  analysis + CSV export), Readiness (foundations R/Y/G + per-section go/no-go gates), Data (JSON
+  export/import). All progress in localStorage.
+- Content sourced from the Phase-2 deep-dive sheets; indexed tax dollar amounts avoided or flagged
+  (stable statutory thresholds like FBAR $10k and the 110%/$150k safe harbor retained).
+- Quality: `npm test` → 37-assertion jsdom smoke suite (data integrity incl. unique IDs/valid areas/4
+  choices per question, all 36 planner combinations, SRS interval math, quiz scoring, error log, readiness
+  verdicts, export/import roundtrip). All passing.
+- Verify later: grow question bank toward area-weight proportions; add TBS-style scenarios.
 
 ### 2026-06-07 — Phase 2b: Discipline deep-dives + OBBBA cutoff verified
 - Sources: AICPA pronouncement-testability policy (later of: Q after earliest mandatory effective date, or

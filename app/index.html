@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPA Prep — Exam Mastery System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>🎯 CPA Prep</h1>
+  <nav class="tabs">
+    <a href="#/dashboard">Dashboard</a>
+    <a href="#/plan">Study Plan</a>
+    <a href="#/cards">Flashcards</a>
+    <a href="#/quiz">Practice</a>
+    <a href="#/errors">Error Log</a>
+    <a href="#/readiness">Readiness</a>
+    <a href="#/data">Data</a>
+  </nav>
+</header>
+
+<main id="view">
+  <noscript><p>This app requires JavaScript. Everything runs locally in your browser — no server, no account.</p></noscript>
+</main>
+
+<!-- Data (plain script globals so the app works over file:// with no build step) -->
+<script src="data/sections.js"></script>
+<script src="data/plans.js"></script>
+<script src="data/flashcards.js"></script>
+<script src="data/questions.js"></script>
+
+<!-- App -->
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+<script src="js/planner.js"></script>
+<script src="js/flashcards.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/errorlog.js"></script>
+<script src="js/readiness.js"></script>
+
+</body>
+</html>

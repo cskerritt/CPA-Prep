@@ -26,10 +26,44 @@ You take **all 3 Cores + exactly 1 Discipline** = 4 sections total. Passing scor
 
 ---
 
+## 🖥️ The study app
+
+This repo now includes a **usable study application** — no build step, no server, no account; everything
+runs in your browser and saves to localStorage.
+
+**Launch it:**
+```bash
+# from the repo root (recommended):
+python3 -m http.server 8080      # then open http://localhost:8080/app/
+# or simply open app/index.html directly in your browser
+```
+
+| Tab | What it does |
+|---|---|
+| **Dashboard** | Plan progress, due flashcards, lifetime accuracy per section vs. readiness targets, weakest-area signals |
+| **Study Plan** | Pick 12/16/24 weeks + sequence + Discipline + start date → week-by-week schedule with check-offs and a 2026 Discipline-window check (Jan/Apr/Jul/Oct) |
+| **Flashcards** | 168 cards built from the deep-dive sheets, with spaced repetition (Again/Hard/Good/Easy) |
+| **Practice** | 114 original blueprint-tagged MCQs with explanations; per-area accuracy tracking; one-click "add miss to error log" |
+| **Error Log** | The highest-ROI artifact — log every miss with the rule + decisive fact; pattern analysis; CSV export |
+| **Readiness** | Foundations Red/Yellow/Green self-assessment + per-section go/no-go gates (timed-mix %, TBS timing, two mocks) |
+| **Data** | Export/import all progress as JSON; full reset |
+
+**Test it:** `npm install && npm test` runs a 37-assertion smoke suite (jsdom) covering data integrity,
+routing, the planner's 36 plan combinations, SRS scheduling, quiz scoring, the error log, readiness math,
+and export/import.
+
+> The app's practice questions and cards are **supplements** built from this repo's research — they don't
+> replace a commercial review course's volume (thousands of MCQs) or TBS simulations.
+
 ## How this repo is organized
 
 ```
 README.md                         ← you are here
+app/                              ← THE STUDY APP (open app/index.html)
+  index.html                      ← dashboard · planner · flashcards · practice · error log · readiness
+  data/                           ← sections, plan templates, 168 flashcards, 114 MCQs
+  js/                             ← dependency-free vanilla JS (localStorage persistence)
+  test/smoke.mjs                  ← npm test — 37-assertion jsdom suite
 roadmap/
   01-master-roadmap.md            ← THE KNOWLEDGE WEB: how every section connects (Mermaid maps)
   02-exam-architecture.md         ← structure, scoring, scheduling, the 30-month credit window
