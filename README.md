@@ -43,14 +43,20 @@ python3 -m http.server 8080      # then open http://localhost:8080/app/
 | **Dashboard** | Plan progress, due flashcards, lifetime accuracy per section vs. readiness targets, weakest-area signals |
 | **Study Plan** | Pick 12/16/24 weeks + sequence + Discipline + start date → week-by-week schedule with check-offs and a 2026 Discipline-window check (Jan/Apr/Jul/Oct) |
 | **Flashcards** | 168 cards built from the deep-dive sheets, with spaced repetition (Again/Hard/Good/Easy) |
-| **Practice** | 114 original blueprint-tagged MCQs with explanations; per-area accuracy tracking; one-click "add miss to error log" |
+| **Practice** | **210** original blueprint-tagged MCQs with explanations (30+ per section, weighted toward heavy areas); per-area accuracy tracking; one-click "add miss to error log" |
+| **TBS Sims** | Task-based-simulation-style worked problems — bank rec, lease schedule, report selection, partner basis, Schedule M-1, variances, SOC selection, S-corp basis — with graded parts and full worked solutions |
 | **Error Log** | The highest-ROI artifact — log every miss with the rule + decisive fact; pattern analysis; CSV export |
 | **Readiness** | Foundations Red/Yellow/Green self-assessment + per-section go/no-go gates (timed-mix %, TBS timing, two mocks) |
 | **Data** | Export/import all progress as JSON; full reset |
 
-**Test it:** `npm install && npm test` runs a 37-assertion smoke suite (jsdom) covering data integrity,
-routing, the planner's 36 plan combinations, SRS scheduling, quiz scoring, the error log, readiness math,
-and export/import.
+**Test it:** `npm install && npm test` runs a **47-assertion** smoke suite (jsdom) covering data integrity,
+routing, the planner's 36 plan combinations, SRS scheduling, quiz scoring, TBS grading, the error log,
+readiness math, and export/import. CI runs it on every push (`.github/workflows/test.yml`).
+
+**Use it from your phone:** once this branch is merged to `main`, the Pages workflow
+(`.github/workflows/pages.yml`) deploys the repo as a static site — the app lands at
+`https://cskerritt.github.io/CPA-Prep/` (the root redirects to `/app/`). If the first deploy doesn't
+auto-enable Pages, set *Settings → Pages → Source: GitHub Actions* once.
 
 > The app's practice questions and cards are **supplements** built from this repo's research — they don't
 > replace a commercial review course's volume (thousands of MCQs) or TBS simulations.
@@ -60,10 +66,11 @@ and export/import.
 ```
 README.md                         ← you are here
 app/                              ← THE STUDY APP (open app/index.html)
-  index.html                      ← dashboard · planner · flashcards · practice · error log · readiness
-  data/                           ← sections, plan templates, 168 flashcards, 114 MCQs
+  index.html                      ← dashboard · planner · flashcards · practice · TBS sims · error log · readiness
+  data/                           ← sections, plan templates, 168 flashcards, 210 MCQs, 8 TBS scenarios
   js/                             ← dependency-free vanilla JS (localStorage persistence)
-  test/smoke.mjs                  ← npm test — 37-assertion jsdom suite
+  test/smoke.mjs                  ← npm test — 47-assertion jsdom suite (runs in CI)
+.github/workflows/                ← CI tests on every push + GitHub Pages deploy from main
 roadmap/
   01-master-roadmap.md            ← THE KNOWLEDGE WEB: how every section connects (Mermaid maps)
   02-exam-architecture.md         ← structure, scoring, scheduling, the 30-month credit window

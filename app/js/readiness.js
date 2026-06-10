@@ -12,7 +12,7 @@
 
     /* ---------- foundations ---------- */
     html += "<h3>1 · Foundations self-assessment</h3>"
-      + '<p class="small muted">Rate honestly. Any RED gets repaired before heavy review of the sections it affects — see <a href="../foundations/00-prerequisites.md">foundations</a> for the diagnostics and repair plan.</p>';
+      + '<p class="small muted">Rate honestly. Any RED gets repaired before heavy review of the sections it affects — see <a href="' + window.App.kb("../foundations/00-prerequisites.md") + '">foundations</a> for the diagnostics and repair plan.</p>';
     html += '<div class="card" style="padding:0"><table class="tbl">';
     window.CPA_FOUNDATIONS.forEach(function (f) {
       var v = found[f.id] || "";
@@ -68,7 +68,7 @@
         + "</div>";
     });
 
-    html += '<p class="small muted">Section-specific "you\'re ready" flags and the full checklist: <a href="../study-plan/04-assessment-remediation.md">assessment & remediation</a>.</p>';
+    html += '<p class="small muted">Section-specific "you\'re ready" flags and the full checklist: <a href="' + window.App.kb("../study-plan/04-assessment-remediation.md") + '">assessment & remediation</a>.</p>';
 
     root.innerHTML = html;
 

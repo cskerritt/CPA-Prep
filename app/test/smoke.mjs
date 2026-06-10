@@ -54,7 +54,8 @@ await new Promise((r) => setTimeout(r, 300));
 /* ---------- data integrity ---------- */
 check("sections loaded", w.CPA_SECTIONS && Object.keys(w.CPA_SECTIONS).length === 6);
 check("cards loaded (>=150)", Array.isArray(w.CPA_CARDS) && w.CPA_CARDS.length >= 150, "got " + (w.CPA_CARDS || []).length);
-check("questions loaded (>=100)", Array.isArray(w.CPA_QUESTIONS) && w.CPA_QUESTIONS.length >= 100, "got " + (w.CPA_QUESTIONS || []).length);
+check("questions loaded (>=200)", Array.isArray(w.CPA_QUESTIONS) && w.CPA_QUESTIONS.length >= 200, "got " + (w.CPA_QUESTIONS || []).length);
+check("TBS scenarios loaded (>=8)", Array.isArray(w.CPA_TBS) && w.CPA_TBS.length >= 8, "got " + (w.CPA_TBS || []).length);
 
 const qids = new Set(), cids = new Set();
 const qProblems = [];
@@ -83,8 +84,33 @@ const qBySec = {}, cBySec = {};
 w.CPA_QUESTIONS.forEach((q) => (qBySec[q.section] = (qBySec[q.section] || 0) + 1));
 w.CPA_CARDS.forEach((c) => (cBySec[c.section] = (cBySec[c.section] || 0) + 1));
 console.log("  questions/section:", JSON.stringify(qBySec), "cards/section:", JSON.stringify(cBySec));
-check("every section has >=15 questions", Object.keys(w.CPA_SECTIONS).every((s) => (qBySec[s] || 0) >= 15));
+check("every section has >=30 questions", Object.keys(w.CPA_SECTIONS).every((s) => (qBySec[s] || 0) >= 30));
 check("every section has >=20 cards", Object.keys(w.CPA_SECTIONS).every((s) => (cBySec[s] || 0) >= 20));
+
+/* TBS data integrity */
+const tProblems = [];
+const tids = new Set();
+for (const t of w.CPA_TBS) {
+  if (tids.has(t.id)) tProblems.push("dup id " + t.id);
+  tids.add(t.id);
+  if (!w.CPA_SECTIONS[t.section]) tProblems.push(t.id + " bad section");
+  else if (!w.CPA_SECTIONS[t.section].areas[t.area]) tProblems.push(t.id + " bad area");
+  if (!t.scenario || t.scenario.length < 40) tProblems.push(t.id + " thin scenario");
+  for (const [i, p] of t.parts.entries()) {
+    if (p.type === "number" && typeof p.answer !== "number") tProblems.push(t.id + "#" + i + " non-numeric answer");
+    if (p.type === "select" && !(Array.isArray(p.choices) && Number.isInteger(p.answer) && p.answer >= 0 && p.answer < p.choices.length)) tProblems.push(t.id + "#" + i + " bad select");
+    if (!p.solution || p.solution.length < 10) tProblems.push(t.id + "#" + i + " thin solution");
+  }
+}
+check("TBS integrity", tProblems.length === 0, tProblems.slice(0, 5).join("; "));
+check("every section has a TBS scenario", Object.keys(w.CPA_SECTIONS).every((s) => w.CPA_TBS.some((t) => t.section === s)));
+
+/* TBS grading helpers */
+check("TBS numeric grading with tolerance", w.TBS.gradePart({ type: "number", answer: 19550 }, "19,550") === true
+  && w.TBS.gradePart({ type: "number", answer: 19550 }, "19000") === false
+  && w.TBS.gradePart({ type: "number", answer: -2650 }, "(2,650)") === true);
+check("TBS select grading", w.TBS.gradePart({ type: "select", answer: 2, choices: ["a", "b", "c"] }, "2") === true
+  && w.TBS.gradePart({ type: "select", answer: 2, choices: ["a", "b", "c"] }, "1") === false);
 
 /* ---------- dashboard ---------- */
 const view = w.document.getElementById("view");
@@ -158,6 +184,24 @@ check("wrong answer shows explanation", /Not quite/.test(view.innerHTML));
 view.querySelector("#qz-log").click();
 check("miss logged to error log from quiz", w.Store.get("errorlog", []).length === 1);
 view.querySelector("#qz-quit").click();
+
+/* ---------- TBS view ---------- */
+w.location.hash = "#/tbs";
+w.App.render();
+check("TBS list rendered with all scenarios", (view.innerHTML.match(/data-open=/g) || []).length === w.CPA_TBS.length);
+view.querySelector('[data-open="TBS-REG-1"]').click();
+check("TBS scenario opened", /Partner basis/.test(view.innerHTML) && view.querySelectorAll("[data-part]").length === 4);
+const tbsScn = w.CPA_TBS.find((t) => t.id === "TBS-REG-1");
+view.querySelectorAll("[data-part]").forEach((inp, i) => {
+  inp.value = String(tbsScn.parts[i].answer);
+  inp.dispatchEvent(new w.Event("change", { bubbles: true }));
+});
+view.querySelector("#tbs-check").click();
+check("TBS all-correct score shown", new RegExp("4 / 4").test(view.innerHTML));
+const tbsScores = w.Store.get("tbs.scores", {});
+check("TBS best score persisted", tbsScores["TBS-REG-1"] && tbsScores["TBS-REG-1"].score === 4);
+view.querySelector("#tbs-back").click();
+check("TBS back to list shows best score", /4\/4 ✅/.test(view.innerHTML));
 
 /* ---------- error log ---------- */
 w.location.hash = "#/errors";

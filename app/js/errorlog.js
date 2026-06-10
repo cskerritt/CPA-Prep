@@ -51,7 +51,7 @@
       Object.keys(byCat).sort(function (a, b) { return byCat[b] - byCat[a]; }).forEach(function (c) {
         html += "<tr><td>" + esc(c) + "</td><td class=\"right\"><b>" + byCat[c] + "</b></td></tr>";
       });
-      html += "</table><p class=\"small muted mt\">Fixes per mode are in <a href=\"../study-plan/04-assessment-remediation.md\">assessment & remediation</a> §4.</p></div>";
+      html += "</table><p class=\"small muted mt\">Fixes per mode are in <a href=\"" + window.App.kb("../study-plan/04-assessment-remediation.md") + "\">assessment & remediation</a> §4.</p></div>";
       html += '<div class="card"><h3>By blueprint area</h3><table class="tbl">';
       Object.keys(bySec).sort(function (a, b) { return bySec[b] - bySec[a]; }).slice(0, 8).forEach(function (k) {
         html += "<tr><td>" + esc(k) + "</td><td class=\"right\"><b>" + bySec[k] + "</b></td></tr>";

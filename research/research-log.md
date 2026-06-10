@@ -43,8 +43,11 @@ flowchart LR
 > **OBBBA July 1, 2026 testability cutoff** verified for REG/TCP.
 > **Phase 3 (done):** the **study app** (`/app`) — planner, 168-card spaced-repetition deck, 114-question
 > practice bank, error log, readiness gates, data export — with a 37-assertion automated test suite.
-> **Phase 4 (next):** verification queue below (verbatim blueprint topic lists, indexed tax figures),
-> growing the question/card banks, and TBS-style practice scenarios.
+> **Phase 4 (done):** question bank grown to **210** MCQs (30+ per section, weighted toward heavy
+> blueprint areas), **8 TBS-style worked scenarios** with graded parts, CI workflow (tests on every push),
+> and a GitHub Pages deploy workflow for phone access. Test suite now 47 assertions.
+> **Phase 5 (next):** verification queue below (verbatim blueprint topic lists, indexed tax figures),
+> continued bank growth toward area-weight proportions, more TBS scenarios per section.
 
 ---
 
@@ -124,6 +127,20 @@ Append dated entries as you go. Template:
 - Artifact: <what you built + where it lives>
 - Verify later: <anything uncertain>
 ```
+
+### 2026-06-10 — Phase 4: bank growth, TBS sims, CI + Pages
+- Added `app/data/questions-extra.js`: **96 new MCQs** (FAR/AUD/REG +16 each, BAR/ISC/TCP +16 each),
+  targeted at the heaviest blueprint areas (FAR II/III, AUD II/III, REG IV/V, BAR I/II, ISC I/II, TCP I/II).
+  Stable statutory figures kept ($3k capital-loss limit, DRD 50/65/100 tiers, §351 80% control, NIIT 3.8%
+  + unindexed thresholds, §1031 45/180 days, 30-day wash sale); indexed amounts avoided.
+- Added `app/data/tbs.js` + TBS Sims view: 8 multi-part worked scenarios (bank rec, lease schedule, audit
+  report selection, partner basis, Schedule M-1, standard-cost variances, SOC selection, S-corp basis &
+  distributions) with numeric-tolerance and select grading, best-score persistence, full worked solutions.
+- Infrastructure: `.github/workflows/test.yml` (CI on every push), `.github/workflows/pages.yml`
+  (Pages deploy from main; root `index.html` redirects to `/app/`), `App.kb()` rewrites knowledge-base
+  links to github.com when served from github.io.
+- Quality: smoke suite expanded to **47 assertions** (TBS data integrity, grading math incl. accounting-
+  style negatives, full TBS UI flow). All passing.
 
 ### 2026-06-10 — Phase 3: the study app
 - Built `/app`: dependency-free vanilla-JS study application (works over file:// or any static server).

@@ -97,12 +97,12 @@
       html += "</div>";
 
       html += '<p class="small muted mt">Per-section rhythm: ~45% content acquisition · 35% mixed MCQ+TBS practice · 20% cumulative review & mocks. '
-        + 'Daily/weekly mechanics: <a href="../study-plan/03-weekly-template.md">weekly template</a>. '
+        + 'Daily/weekly mechanics: <a href="' + window.App.kb("../study-plan/03-weekly-template.md") + '">weekly template</a>. '
         + 'Readiness gates before each sit: <a href="#/readiness">readiness tracker</a>.</p>';
     } else {
       html += '<div class="notice mt">No plan yet — choose your options above and build one. Not sure which Discipline? '
         + 'Rule of thumb: <b>BAR</b> extends FAR (reporting/FP&A people), <b>ISC</b> extends AUD (IT-audit/SOC people), <b>TCP</b> extends REG (tax people). '
-        + 'See <a href="../study-plan/01-sequence-and-hours.md">sequence & hours</a>.</div>';
+        + 'See <a href="' + window.App.kb("../study-plan/01-sequence-and-hours.md") + '">sequence & hours</a>.</div>';
     }
 
     root.innerHTML = html;

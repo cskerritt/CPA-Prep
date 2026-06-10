@@ -30,6 +30,15 @@
     return '<span class="sectag" style="background:' + meta.color + '">' + esc(sec) + "</span>";
   }
 
+  /* Knowledge-base link helper: on GitHub Pages, point at the rendered files on github.com;
+     locally (file:// or a static server), keep the relative path. */
+  function kb(relPath) {
+    if (/\.github\.io$/.test(location.hostname)) {
+      return "https://github.com/cskerritt/CPA-Prep/blob/main/" + relPath.replace(/^\.\.\//, "");
+    }
+    return relPath;
+  }
+
   /* Aggregated quiz stats: { SEC: { total, correct, areas: { I: {total, correct} } } } */
   function quizStats() {
     return window.Store.get("quiz.stats", {});
@@ -49,7 +58,7 @@
 
   window.App = {
     esc: esc, todayISO: todayISO, addDays: addDays, fmtDate: fmtDate,
-    pct: pct, barClass: barClass, sectionBadge: sectionBadge, quizStats: quizStats
+    pct: pct, barClass: barClass, sectionBadge: sectionBadge, quizStats: quizStats, kb: kb
   };
   window.Views = window.Views || {};
 
@@ -129,20 +138,20 @@
     html += "<h3>Knowledge base</h3>";
     html += '<div class="grid cols3">';
     html += '<div class="card"><h3>Roadmap</h3><p class="small muted">The knowledge web — how all six sections connect.</p>'
-      + '<a href="../roadmap/01-master-roadmap.md">Master roadmap</a><br>'
-      + '<a href="../roadmap/02-exam-architecture.md">Exam architecture</a><br>'
-      + '<a href="../foundations/00-prerequisites.md">Foundations</a></div>';
+      + '<a href="' + kb("../roadmap/01-master-roadmap.md") + '">Master roadmap</a><br>'
+      + '<a href="' + kb("../roadmap/02-exam-architecture.md") + '">Exam architecture</a><br>'
+      + '<a href="' + kb("../foundations/00-prerequisites.md") + '">Foundations</a></div>';
     html += '<div class="card"><h3>Section dossiers</h3><p class="small muted">Blueprint maps + deep-dive reference sheets.</p>';
     Object.keys(window.CPA_SECTIONS).forEach(function (sec) {
       var m = window.CPA_SECTIONS[sec];
-      html += '<a href="' + m.dossier + '">' + sec + " dossier</a> · <a href=\"" + m.deepDive + '">deep-dive</a><br>';
+      html += '<a href="' + kb(m.dossier) + '">' + sec + " dossier</a> · <a href=\"" + kb(m.deepDive) + '">deep-dive</a><br>';
     });
     html += "</div>";
     html += '<div class="card"><h3>Study system</h3><p class="small muted">Plans, templates, remediation.</p>'
-      + '<a href="../study-plan/01-sequence-and-hours.md">Sequence & hours</a><br>'
-      + '<a href="../study-plan/02-phased-plans.md">Phased plans</a><br>'
-      + '<a href="../study-plan/04-assessment-remediation.md">Assessment & remediation</a><br>'
-      + '<a href="../logistics/exam-day.md">Exam-day logistics</a></div>';
+      + '<a href="' + kb("../study-plan/01-sequence-and-hours.md") + '">Sequence & hours</a><br>'
+      + '<a href="' + kb("../study-plan/02-phased-plans.md") + '">Phased plans</a><br>'
+      + '<a href="' + kb("../study-plan/04-assessment-remediation.md") + '">Assessment & remediation</a><br>'
+      + '<a href="' + kb("../logistics/exam-day.md") + '">Exam-day logistics</a></div>';
     html += "</div>";
 
     html += '<div class="notice mt"><b>Verify before relying:</b> pass rates shift quarterly, the 18- vs 30-month credit window is jurisdiction-specific, and OBBBA tax changes become testable on REG/TCP starting <b>July 1, 2026</b>. Check your state board and the live AICPA pages.</div>';
@@ -199,6 +208,7 @@
     "plan": "plan",
     "cards": "cards",
     "quiz": "quiz",
+    "tbs": "tbs",
     "errors": "errors",
     "readiness": "readiness",
     "data": "data"
